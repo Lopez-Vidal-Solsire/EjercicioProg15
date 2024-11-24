@@ -15,9 +15,9 @@ import Modelo.Lenguajeprog;
  */
 public class GestionLenguaje {
     private static final int FACTOR_CRECIMIENTO=2;
-    private int contadorLenguajes=0;
-    private Lenguajeprog[] ArregloLenguajes=new Lenguajeprog[FACTOR_CRECIMIENTO];
-    
+    private static int contadorLenguajes=0;
+    private static Lenguajeprog[] ArregloLenguajes=new Lenguajeprog[FACTOR_CRECIMIENTO];
+        
     
     //Método AgregarLenguaje
     public void AgregarLenguaje( int AnioCreacion, String CaracteristicaPrin,String Nombre,String Utilización){
@@ -29,9 +29,11 @@ public class GestionLenguaje {
                 ArregloLenguajes[contadorLenguajes]=new Lenguajeprog(AnioCreacion, CaracteristicaPrin, Nombre, Utilización);
                 contadorLenguajes++;
             }
-        }
-     //Método BuscarLenguaje
-    public Lenguajeprog buscarLenguaje(String Nombre) {
+    }
+    //Método BuscarLenguaje
+
+    
+    public static Lenguajeprog buscarLenguaje(String Nombre){
         for (int i = 0; i < contadorLenguajes; i++) {
             //Busca coincidencia y nos retorna
             if (ArregloLenguajes[i].getNombre().equalsIgnoreCase(Nombre)) {
@@ -55,14 +57,14 @@ public class GestionLenguaje {
     return false;
     }
 
-    @Override
-    public String toString() {
-        return "GestionLenguaje{" + "ArregloLenguajes=" + ArregloLenguajes + '}';
-    }
         //Método ImprimirLenguaje
 public void ImprimirLenguaje(){
     for (int i = 0; i < contadorLenguajes; i++) {
-        System.out.println(ArregloLenguajes[i].toString());
-    }
+        if (contadorLenguajes>0) {
+         System.out.println(ArregloLenguajes[i].toString());
+    }else{
+            System.out.println("no hay lenguajes");
+        }
 }    
+}
 }
