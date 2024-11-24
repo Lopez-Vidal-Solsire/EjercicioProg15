@@ -14,6 +14,7 @@ public class Lenguajeprog {
     private String Nombre;
     private String Utilización;
 
+
     public Lenguajeprog(int AnioCreacion, String CaracteristicaPrin, String Nombre, String Utilización) {
         this.AnioCreacion = AnioCreacion;
         this.CaracteristicaPrin = CaracteristicaPrin;
