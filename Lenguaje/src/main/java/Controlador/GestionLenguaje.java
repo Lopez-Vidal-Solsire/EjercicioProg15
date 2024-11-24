@@ -18,6 +18,8 @@ public class GestionLenguaje {
     private int contadorLenguajes=0;
     private Lenguajeprog[] ArregloLenguajes=new Lenguajeprog[FACTOR_CRECIMIENTO];
     
+    
+    //Método AgregarLenguaje
     public void AgregarLenguaje( int AnioCreacion, String CaracteristicaPrin,String Nombre,String Utilización){
             if (contadorLenguajes>=ArregloLenguajes.length){
         Lenguajeprog[] ArrFaCrec=new Lenguajeprog[ArregloLenguajes.length+FACTOR_CRECIMIENTO];   
@@ -28,20 +30,25 @@ public class GestionLenguaje {
                 contadorLenguajes++;
             }
         }
-        
+     //Método BuscarLenguaje
     public Lenguajeprog buscarLenguaje(String Nombre) {
         for (int i = 0; i < contadorLenguajes; i++) {
+            //Busca coincidencia y nos retorna
             if (ArregloLenguajes[i].getNombre().equalsIgnoreCase(Nombre)) {
                 return ArregloLenguajes[i];
             }
         }
         return null;
     }
+    //Método EliminarLenguaje
         public boolean EliminarLenguaje (String Nombre){
         for (int i = 0; i < contadorLenguajes; i++) {
             if (ArregloLenguajes[i].getNombre().equalsIgnoreCase(Nombre)) {
-                System.arraycopy(ArregloLenguajes, i + 1, ArregloLenguajes, i, contadorLenguajes - i - 1);
-                contadorLenguajes--;
+                //Coincide  
+                for (int j = i ; j < contadorLenguajes; j++) {
+                    ArregloLenguajes[j]=ArregloLenguajes[j++];
+                }
+                ArregloLenguajes[contadorLenguajes--]=null;
                 return true;
         }
 }
@@ -52,7 +59,7 @@ public class GestionLenguaje {
     public String toString() {
         return "GestionLenguaje{" + "ArregloLenguajes=" + ArregloLenguajes + '}';
     }
-        
+        //Método ImprimirLenguaje
 public void ImprimirLenguaje(){
     for (int i = 0; i < contadorLenguajes; i++) {
         System.out.println(ArregloLenguajes[i].toString());
