@@ -10,6 +10,8 @@ package Vista;
  */
 public class SistemaRegistro {
     public static void main(String[] args) {
+        SistemaRegistro Sistema=new SistemaRegistro();
+        Sistema.imprimirMenu();
     }
        private void imprimirMenu(){
               System.out.println("Agregar Lenguaje");
