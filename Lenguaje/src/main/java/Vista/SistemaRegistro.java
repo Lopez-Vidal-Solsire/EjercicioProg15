@@ -9,5 +9,13 @@ package Vista;
  * @author SOLSIRE
  */
 public class SistemaRegistro {
-    
+    public static void main(String[] args) {
+    }
+       private void imprimirMenu(){
+              System.out.println("Agregar Lenguaje");
+              System.out.println("Eliminar Lenguaje");
+              System.out.println("Buscar Lenguaje ");
+              System.out.println("Imprimir Lenguaje ");
+              System.out.println("Salir");
 }
+    }
