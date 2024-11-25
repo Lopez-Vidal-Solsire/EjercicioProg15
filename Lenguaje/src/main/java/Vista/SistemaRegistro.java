@@ -14,11 +14,10 @@ import java.util.Scanner;
  */
 public class SistemaRegistro {
     private static GestionLenguaje gestionL=new GestionLenguaje();
-
+    
     public static void main(String[] args) {
         imprimirMenu();
-      
-    }
+          }
        private static void imprimirMenu(){
            int opcion;
           Scanner lector=new Scanner(System.in);
@@ -30,23 +29,21 @@ public class SistemaRegistro {
              4.Imprimir Lenguaje     
              5.Salir
              """;
+              System.out.println(opciones);
               System.out.println("------Escoge una opci+on------");
                 opcion=lector.nextInt();
                 lector.nextLine();
             switch (opcion){
                 case 1:
                     System.out.println("Ingrese Nombre");
-                    String nombre=lector.nextLine();
-                    lector.nextLine();
+                    String nombre=lector.nextLine();                    
                     System.out.println(" Ingrese AnioCreacion");
                     int anioCreac=lector.nextInt();
                     lector.nextLine();
                     System.out.println("Ingrese CaracteristicaPrin");
                     String Caraprin=lector.nextLine();
-                    lector.nextLine();
-                    System.out.println("Ingrese Utilización");
+                    System.out.println("Ingrese Utilizacion");
                     String Util=lector.nextLine();
-                    lector.nextLine();
                     gestionL.AgregarLenguaje(anioCreac, Caraprin, nombre, Util);
                     break;
                 case 2:
@@ -72,7 +69,14 @@ public class SistemaRegistro {
                 case 4:
                     gestionL.ImprimirLenguaje();
                     break;
+                case 5:
+                    System.out.println("Saliendo");
+                    break;
+                default:
+                    System.out.println("Opción no valida");
           }
-       }
-       
-       
+       }while (opcion!=5); 
+          lector.close();
+          }
+              
+}
