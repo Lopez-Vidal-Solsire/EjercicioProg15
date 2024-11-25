@@ -12,14 +12,14 @@ public class Lenguajeprog {
     private int AnioCreacion;
     private String CaracteristicaPrin;
     private String Nombre;
-    private String Utilización;
+    private String Utilizacion;
 
 
-    public Lenguajeprog(int AnioCreacion, String CaracteristicaPrin, String Nombre, String Utilización) {
+    public Lenguajeprog(int AnioCreacion, String CaracteristicaPrin, String Nombre, String Utilizacion) {
         this.AnioCreacion = AnioCreacion;
         this.CaracteristicaPrin = CaracteristicaPrin;
         this.Nombre = Nombre;
-        this.Utilización = Utilización;
+        this.Utilizacion = Utilizacion;
     }
 
     
@@ -47,17 +47,21 @@ public class Lenguajeprog {
         this.Nombre = Nombre;
     }
 
-    public String getUtilización() {
-        return Utilización;
+    public String getUtilizacion() {
+        return Utilizacion;
     }
 
-    public void setUtilización(String Utilización) {
-        this.Utilización = Utilización;
+    public void setUtilizacion(String Utilizacion) {
+        this.Utilizacion = Utilizacion;
     }
 
     @Override
     public String toString() {
-        return "Lenguajeprog{" + "AnioCreacion=" + AnioCreacion + ", CaracteristicaPrin=" + CaracteristicaPrin + ", Nombre=" + Nombre + ", Utilizaci\u00f3n=" + Utilización + '}';
+        return "Lenguajeprog{"
+                + "AnioCreacion=" + AnioCreacion + 
+                ", CaracteristicaPrin=" + CaracteristicaPrin + 
+                ", Nombre=" + Nombre + ", Utilizacion=" +
+                Utilizacion + '}';
     }
     
 }
