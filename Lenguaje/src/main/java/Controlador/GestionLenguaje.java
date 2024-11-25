@@ -20,13 +20,13 @@ public class GestionLenguaje {
         
     
     //Método AgregarLenguaje
-    public void AgregarLenguaje( int AnioCreacion, String CaracteristicaPrin,String Nombre,String Utilización){
+    public void AgregarLenguaje( int AnioCreacion, String CaracteristicaPrin,String Nombre,String Utilizacion){
             if (contadorLenguajes>=ArregloLenguajes.length){
         Lenguajeprog[] ArrFaCrec=new Lenguajeprog[ArregloLenguajes.length+FACTOR_CRECIMIENTO];   
         System.arraycopy(ArregloLenguajes,0,ArrFaCrec,0,ArregloLenguajes.length);
         ArregloLenguajes=ArrFaCrec;
         }else{
-                ArregloLenguajes[contadorLenguajes]=new Lenguajeprog(AnioCreacion, CaracteristicaPrin, Nombre, Utilización);
+                ArregloLenguajes[contadorLenguajes]=new Lenguajeprog(AnioCreacion, CaracteristicaPrin, Nombre, Utilizacion);
                 contadorLenguajes++;
             }
     }
